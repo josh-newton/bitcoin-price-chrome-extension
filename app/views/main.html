@@ -1,0 +1,34 @@
+<div class="container">
+	<h1>Bitcoin price</h1>
+	<hr>
+	<div class="btn-group url-options">
+		<button class="btn btn-default" ng-model="currentUrl" btn-radio="'btcAverage'">BitcoinAverage</button>
+		<button class="btn btn-default" ng-model="currentUrl" btn-radio="'blockchain'">Blockchain</button>
+		<button class="btn btn-default" ng-model="currentUrl" btn-radio="'coindesk'">Coindesk</button>
+		<button class="btn btn-default" ng-model="currentUrl" btn-radio="'coinbase'">Coinbase</button>
+	</div>
+
+	<div ng-show="currentUrl == 'btcAverage'">
+		<p class="price" ng-bind="prices.btcAverage.gbp | currency:'£'"></p>
+		<p class="price" ng-bind="prices.btcAverage.usd | currency:'$'"></p>
+		<p class="price" ng-bind="prices.btcAverage.eur | currency:'€'"></p>
+	</div>
+
+	<div ng-show="currentUrl == 'blockchain'">
+		<p class="price" ng-bind="prices.blockchain.gbp | currency:'£'"></p>
+		<p class="price" ng-bind="prices.blockchain.usd | currency:'$'"></p>
+		<p class="price" ng-bind="prices.blockchain.eur | currency:'€'"></p>
+	</div>
+
+	<div ng-show="currentUrl == 'coindesk'">
+		<p class="price" ng-bind="prices.coindesk.gbp | currency:'£'"></p>
+		<p class="price" ng-bind="prices.coindesk.usd | currency:'$'"></p>
+		<p class="price" ng-bind="prices.coindesk.eur | currency:'€'"></p>
+	</div>
+
+	<div ng-show="currentUrl == 'coinbase'">
+		<p class="price" ng-bind="prices.coinbase.gbp | currency:'£'"></p>
+		<p class="price" ng-bind="prices.coinbase.usd | currency:'$'"></p>
+		<p class="price" ng-bind="prices.coinbase.eur | currency:'€'"></p>
+	</div>
+</div>
